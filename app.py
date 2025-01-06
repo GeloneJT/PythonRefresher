@@ -1,10 +1,8 @@
-#  Q: Which of these condtional statements will be printed?
-
-if 10 == "10":
-  print("a")
-elif "bag" > "apple" and "bag" > "cat":
-  print("b")
+successful = False
+for number in range(3):
+    print("Attempt")
+    if successful:
+        print("Successful")
+        break
 else:
-  print("c")
-
-# A: Only the else print showing "c" will display since all other condtions return False
+    print("Attempted 3 times and failed")
