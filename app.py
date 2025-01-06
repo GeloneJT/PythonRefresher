@@ -1,9 +1,10 @@
-age = 20
-# if age >= 20:
-#     message ="Eligible"
-# else:
-#     message = "Not eligible"
-# print(message)
+#  Q: Which of these condtional statements will be printed?
 
-message = "Eligible" if age >= 18 else "Not Eligible"
-print(message)
+if 10 == "10":
+  print("a")
+elif "bag" > "apple" and "bag" > "cat":
+  print("b")
+else:
+  print("c")
+
+# A: Only the else print showing "c" will display since all other condtions return False
