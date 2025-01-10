@@ -1,8 +1,14 @@
-'''Python Functions - xxargs and dictionary'''
+'''Python Functions - FizzBuzz'''
 
 
-def save_user(**user):
-    '''Save user function'''
-    print(user)
+def fizzbuzz(user_input):
+    ''''Fizzbuzz'''
+    if (user_input % 3 == 0) and (user_input % 5 == 0):
+        return "FizzBuzz"
+    if user_input % 3 == 0:
+        return "Fizz"
+    if user_input % 5 == 0:
+        return "Buzz"
+    return user_input
 
-save_user(id=1, name="Jelani", age=37)
+print(fizzbuzz(7))
