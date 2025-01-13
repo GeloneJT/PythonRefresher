@@ -1,14 +1,23 @@
-'''Python Functions - Sets'''
+'''Python Functions - Data Structure Exercise'''
 
-numbers = [1, 2, 3, 4]
-first = set(numbers)
-second = {1, 5}
+SENTENCE = "This is a common interview question"
 
-# returns a new set of all items that are in the first or second set  {1, 2, 3, 4, 5}
-print(first | second)
-# returns a new set of all the items that are both in the first and second set {1}
-print(first & second)
-# returns a new set of the difference of the items of the first and second set {2, 3, 4}
-print(first - second)
-#  returns a new set of items that are in the first or second set but not both {2, 3, 4, 5}
-print(first ^ second)
+char_frequency = {}
+
+for char in SENTENCE:
+    if char in char_frequency:
+        # iterates over SENTENCE converting it into a dictionary and
+        # if the character appears in the dict it increments the value by 1
+        char_frequency[char] += 1
+    else:
+        # otherwise add it to the dictionary and the value is set to 1
+        char_frequency[char] = 1
+#  the dictonary items are put into a list of tuples and
+# then sorted in reverse showing the most common letter first
+char_frequency_sorted = sorted(
+    char_frequency.items(), key=lambda kv: kv[1], reverse=True)
+
+most_common_char = char_frequency_sorted[0]
+
+print(
+    f"The most common letter {most_common_char[0]} appears {most_common_char[1]} times in SENTENCE")
