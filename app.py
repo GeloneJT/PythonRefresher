@@ -1,23 +1,19 @@
-'''Python Functions - Data Structure Exercise'''
+'''Python Classes: Magic Methods'''
 
-SENTENCE = "This is a common interview question"
 
-char_frequency = {}
+class Point:
+    '''create custom class Point'''
 
-for char in SENTENCE:
-    if char in char_frequency:
-        # iterates over SENTENCE converting it into a dictionary and
-        # if the character appears in the dict it increments the value by 1
-        char_frequency[char] += 1
-    else:
-        # otherwise add it to the dictionary and the value is set to 1
-        char_frequency[char] = 1
-#  the dictonary items are put into a list of tuples and
-# then sorted in reverse showing the most common letter first
-char_frequency_sorted = sorted(
-    char_frequency.items(), key=lambda kv: kv[1], reverse=True)
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
 
-most_common_char = char_frequency_sorted[0]
+    def __add__(self, other):
+        '''Adds the points'''
+        return Point(self.x + other.x, self.y + other.y)
 
-print(
-    f"The most common letter {most_common_char[0]} appears {most_common_char[1]} times in SENTENCE")
+
+point = Point(10, 20)
+another = Point(1, 2)
+combined = point + another
+print(combined.x)
